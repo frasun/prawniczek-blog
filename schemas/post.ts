@@ -1,5 +1,10 @@
 import {defineField, defineType} from 'sanity'
 
+const documents = [
+  {title: 'Umowa najmu lokalu', value: 'umowa-najmu-lokalu'},
+  {title: 'Darowizna', value: 'darowizna'},
+]
+
 export default defineType({
   name: 'post',
   title: 'Post',
@@ -24,6 +29,16 @@ export default defineType({
       title: 'Member Content',
       type: 'boolean',
       initialValue: true,
+    }),
+    defineField({
+      title: 'Match to document',
+      name: 'documents',
+      type: 'array',
+      of: [{type: 'string'}],
+      options: {
+        layout: 'grid',
+        list: documents,
+      },
     }),
     defineField({
       name: 'author',
