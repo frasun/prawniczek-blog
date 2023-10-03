@@ -25,6 +25,16 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'keywords',
+      title: 'Keywords',
+      type: 'string',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+    }),
+    defineField({
       name: 'memberContent',
       title: 'Member Content',
       type: 'boolean',
