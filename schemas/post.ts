@@ -20,6 +20,12 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'memberContent',
+      title: 'Member Content',
+      type: 'boolean',
+      initialValue: true,
+    }),
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
