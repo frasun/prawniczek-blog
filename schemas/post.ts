@@ -1,10 +1,5 @@
 import {defineField, defineType} from 'sanity'
 
-const documents = [
-  {title: 'Umowa najmu lokalu', value: 'umowa-najmu-lokalu'},
-  {title: 'Darowizna', value: 'darowizna'},
-]
-
 export default defineType({
   name: 'post',
   title: 'Post',
@@ -33,22 +28,13 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'text',
+      rows: 3,
     }),
     defineField({
       name: 'memberContent',
       title: 'Member Content',
       type: 'boolean',
       initialValue: true,
-    }),
-    defineField({
-      title: 'Match to document',
-      name: 'documents',
-      type: 'array',
-      of: [{type: 'string'}],
-      options: {
-        layout: 'grid',
-        list: documents,
-      },
     }),
     // defineField({
     //   name: 'author',
@@ -64,12 +50,12 @@ export default defineType({
         hotspot: true,
       },
     }),
-    // defineField({
-    //   name: 'categories',
-    //   title: 'Categories',
-    //   type: 'array',
-    //   of: [{type: 'reference', to: {type: 'category'}}],
-    // }),
+    defineField({
+      name: 'documents',
+      title: 'Match to document',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'legalDocument'}}],
+    }),
     defineField({
       name: 'publishedAt',
       title: 'Published at',

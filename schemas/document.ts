@@ -28,6 +28,7 @@ export default defineType({
       name: 'description',
       title: 'Description',
       type: 'text',
+      rows: 3,
     }),
     defineField({
       name: 'memberContent',
