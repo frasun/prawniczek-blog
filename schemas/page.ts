@@ -11,6 +11,17 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'keywords',
+      title: 'Keywords',
+      type: 'string',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      rows: 3,
+    }),
+    defineField({
       name: 'body',
       title: 'Body',
       type: 'blockContent',
