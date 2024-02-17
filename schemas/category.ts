@@ -35,11 +35,5 @@ export default defineType({
       type: 'boolean',
       initialValue: false,
     }),
-    defineField({
-      name: 'icon',
-      title: 'Icon',
-      type: 'string',
-      hidden: ({document}) => !document?.showOnIndex,
-    }),
   ],
 })
